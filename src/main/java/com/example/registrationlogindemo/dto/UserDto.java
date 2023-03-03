@@ -13,9 +13,8 @@ public class UserDto {
 	private String firstName;
 	@NotEmpty
 	private String lastName;
-	@NotEmpty(message = "Email should not be empty")
-	@Email
-	private String email;
+	@NotEmpty(message = "User Name should not be empty")
+	private String userId;
 	@NotEmpty(message = "Password should not be empty")
 	private String password;
 
@@ -43,13 +42,7 @@ public class UserDto {
 		this.lastName = lastName;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
+	
 
 	public String getPassword() {
 		return password;
@@ -59,10 +52,20 @@ public class UserDto {
 		this.password = password;
 	}
 
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
 	@Override
 	public String toString() {
-		return "UserDto [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+		return "UserDto [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", userId=" + userId
 				+ ", password=" + password + "]";
 	}
+
+	
 
 }

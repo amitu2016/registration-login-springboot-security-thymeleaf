@@ -33,7 +33,7 @@ public class User
     private String name;
 
     @Column(nullable=false, unique=true)
-    private String email;
+    private String userId;
 
     @Column(nullable=false)
     private String password;
@@ -61,13 +61,6 @@ public class User
 		this.name = name;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
 
 	public String getPassword() {
 		return password;
@@ -85,11 +78,20 @@ public class User
 		this.roles = roles;
 	}
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", roles=" + roles
-				+ "]";
+	public String getUserId() {
+		return userId;
 	}
 
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", userId=" + userId + ", password=" + password + ", roles="
+				+ roles + "]";
+	}
+
+	
     
 }

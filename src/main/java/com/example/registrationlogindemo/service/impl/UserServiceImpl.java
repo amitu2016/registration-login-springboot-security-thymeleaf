@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
     public void saveUser(UserDto userDto) {
         User user = new User();
         user.setName(userDto.getFirstName() + " " + userDto.getLastName());
-        user.setEmail(userDto.getEmail());
+        user.setUserId(userDto.getUserId());
 
         //encrypt the password once we integrate spring security
         //user.setPassword(userDto.getPassword());
@@ -46,8 +46,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findByEmail(String email) {
-        return userRepository.findByEmail(email);
+    public User findByUserId(String userId) {
+        return userRepository.findByUserId(userId);
     }
 
     @Override
@@ -62,7 +62,7 @@ public class UserServiceImpl implements UserService {
         String[] name = user.getName().split(" ");
         userDto.setFirstName(name[0]);
         userDto.setLastName(name[1]);
-        userDto.setEmail(user.getEmail());
+        userDto.setUserId(user.getUserId());
         return userDto;
     }
 
